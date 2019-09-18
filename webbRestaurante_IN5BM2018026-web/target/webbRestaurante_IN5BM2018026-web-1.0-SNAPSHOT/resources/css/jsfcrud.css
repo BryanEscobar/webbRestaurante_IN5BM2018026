@@ -1,0 +1,50 @@
+.ui-widget {
+    font-size: 12px !important;
+}
+.ui-layout-north {
+    z-index: 20 !important;
+    overflow: visible !important;;
+}
+.ui-layout-north .ui-layout-unit-content {
+    overflow: visible !important;
+}
+.ui-widget-header {
+    text-align: center;
+    text-transform: uppercase;
+}
+.ui-button {
+    margin-top: 10px !important;
+}
+
+
+.ui-stack {
+        z-index: 1000;
+    }
+
+body{
+    background-image:url("https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2018/06/piantao-3.jpg?fit=2800%2C1867&ssl=1");
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size:100% 100%; 
+}
+
+
+
+
+
+
+h1{
+    color: black;
+    font-family: 'Book Antiqua';
+    background-color:appworkspace;
+    font-size: 75px;
+}
+
+
+
+h2{
+    color:black;
+    font-family: 'Bahnschrift SemiLight';
+    font-size: 18px;
+
+}

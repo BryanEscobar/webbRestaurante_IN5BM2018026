@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Restaurante:)</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        
+  <br></br>
+        <center> <h1 class="h1">Bienvenido Al Restaurante B.E </h1></center>  <br></br>
+        <br />
+ 
+   <h:form>
+    <p:growl>
+    
+    </p:growl>
+
+    <p:panelMenu style="width:300px">
+        <p:submenu label="Registro de Areas">
+            <p:menuitem value="Areas" action="#{menuView.save}" icon="pi pi-save" outcome="/areas/List"/>
+        </p:submenu>
+        
+        <p:submenu label="Registros de Clientes">
+            <p:menuitem value="Clientes" action="#{menuView.save}"  icon="pi pi-save" outcome="/clientes/List"/>
+        </p:submenu>
+        
+        
+        
+        <p:submenu label="Registros de Cocineros">
+            <p:menuitem value="Cocineros" action="#{menuView.save}"  icon="pi pi-save" outcome="/cocineros/List"/>
+        </p:submenu>
+        
+        
+        <p:submenu label="Registro de Detalle De Factura">
+            <p:menuitem value="Detalle De Factura" action="#{menuView.save}"  icon="pi pi-save" outcome="/detallefactura/List"/>
+        </p:submenu>
+        
+        
+         
+        <p:submenu label="Realizacion De Factura">
+            <p:menuitem value="Factura" action="#{menuView.save}"  icon="pi pi-save" outcome="/facturas/List"/>
+        </p:submenu>
+        
+        
+         <p:submenu label="Registro De Mesas">
+            <p:menuitem value="Mesas" action="#{menuView.save}"  icon="pi pi-save" outcome="/mesas/List"/>
+        </p:submenu>
+        
+        
+          <p:submenu label="Registro de Meseros">
+            <p:menuitem value="Meseros" action="#{menuView.save}"  icon="pi pi-save" outcome="/meseros/List"/>
+        </p:submenu>
+        
+         
+          <p:submenu label="Registro De Platos">
+            <p:menuitem value="Platos" action="#{menuView.save}"  icon="pi pi-save" outcome="/platos/List"/>
+        </p:submenu>
+        
+        
+        
+        
+        <p:separator />
+        
+        <p:submenu label="Navigations" >
+            <p:submenu label="Links" icon="pi pi-home">
+                <p:submenu label="PrimeFaces" icon="pi pi-briefcase">
+                    <p:menuitem value="Home" url="http://www.primefaces.org" icon="pi pi-home" />
+                    <p:menuitem value="Docs" url="http://www.primefaces.org/documentation" icon="pi pi-file" />
+                    <p:menuitem value="Download" url="http://www.primefaces.org/downloads" icon="pi pi-arrow-down" />
+                    <p:menuitem value="Support" url="http://www.primefaces.org/support" icon="pi pi-briefcase" />
+                </p:submenu>
+            </p:submenu>
+           
+            <p:menuitem value="Mobile" icon="pi pi-mobile" />
+        </p:submenu>
+    </p:panelMenu>
+</h:form>
+         
+         
+    </h:body>
+
+
+
+
+
+
+
+
+</html>
+

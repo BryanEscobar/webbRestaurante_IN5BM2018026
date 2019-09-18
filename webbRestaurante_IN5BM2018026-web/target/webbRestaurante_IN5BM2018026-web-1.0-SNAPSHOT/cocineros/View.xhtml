@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CocinerosViewDlg" widgetVar="CocinerosViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewCocinerosTitle}">
+            <h:form id="CocinerosViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{cocinerosController.selected != null}">
+                        <h:outputText value="#{bundle.ViewCocinerosLabel_idcocineros}"/>
+                        <h:outputText value="#{cocinerosController.selected.idcocineros}" title="#{bundle.ViewCocinerosTitle_idcocineros}"/>
+                        <h:outputText value="#{bundle.ViewCocinerosLabel_nombre}"/>
+                        <h:outputText value="#{cocinerosController.selected.nombre}" title="#{bundle.ViewCocinerosTitle_nombre}"/>
+                        <h:outputText value="#{bundle.ViewCocinerosLabel_apellido}"/>
+                        <h:outputText value="#{cocinerosController.selected.apellido}" title="#{bundle.ViewCocinerosTitle_apellido}"/>
+                        <h:outputText value="#{bundle.ViewCocinerosLabel_sueldo}"/>
+                        <h:outputText value="#{cocinerosController.selected.sueldo}" title="#{bundle.ViewCocinerosTitle_sueldo}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="CocinerosViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

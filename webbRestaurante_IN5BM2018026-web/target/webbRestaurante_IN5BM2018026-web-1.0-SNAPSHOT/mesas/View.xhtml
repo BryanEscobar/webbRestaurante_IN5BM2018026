@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="MesasViewDlg" widgetVar="MesasViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewMesasTitle}">
+            <h:form id="MesasViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{mesasController.selected != null}">
+                        <h:outputText value="#{bundle.ViewMesasLabel_idmesas}"/>
+                        <h:outputText value="#{mesasController.selected.idmesas}" title="#{bundle.ViewMesasTitle_idmesas}"/>
+                        <h:outputText value="#{bundle.ViewMesasLabel_categorias}"/>
+                        <h:outputText value="#{mesasController.selected.categorias}" title="#{bundle.ViewMesasTitle_categorias}"/>
+                        <h:outputText value="#{bundle.ViewMesasLabel_areasIdareas}"/>
+                        <h:outputText value="#{mesasController.selected.areasIdareas}" title="#{bundle.ViewMesasTitle_areasIdareas}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="MesasViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

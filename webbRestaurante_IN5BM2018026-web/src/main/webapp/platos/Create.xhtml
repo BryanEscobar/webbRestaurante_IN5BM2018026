@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PlatosCreateDlg" widgetVar="PlatosCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreatePlatosTitle}">
+            <h:form id="PlatosCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{platosController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreatePlatosLabel_idplatos}" for="idplatos" />
+                        <p:inputText id="idplatos" value="#{platosController.selected.idplatos}" title="#{bundle.CreatePlatosTitle_idplatos}" required="true" requiredMessage="#{bundle.CreatePlatosRequiredMessage_idplatos}"/>
+                        <p:outputLabel value="#{bundle.CreatePlatosLabel_platos}" for="platos" />
+                        <p:inputText id="platos" value="#{platosController.selected.platos}" title="#{bundle.CreatePlatosTitle_platos}" required="true" requiredMessage="#{bundle.CreatePlatosRequiredMessage_platos}"/>
+                        <p:outputLabel value="#{bundle.CreatePlatosLabel_precio}" for="precio" />
+                        <p:inputText id="precio" value="#{platosController.selected.precio}" title="#{bundle.CreatePlatosTitle_precio}" required="true" requiredMessage="#{bundle.CreatePlatosRequiredMessage_precio}"/>
+                        <p:outputLabel value="#{bundle.CreatePlatosLabel_detallefacturaIddetallefactura}" for="detallefacturaIddetallefactura" />
+                        <p:selectOneMenu id="detallefacturaIddetallefactura" value="#{platosController.selected.detallefacturaIddetallefactura}" required="true" requiredMessage="#{bundle.EditPlatosRequiredMessage_detallefacturaIddetallefactura}">
+                            <f:selectItems value="#{detallefacturaController.itemsAvailableSelectOne}"
+                                           var="detallefacturaIddetallefacturaItem"
+                                           itemValue="#{detallefacturaIddetallefacturaItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{platosController.create}" value="#{bundle.Save}" update="display,:PlatosListForm:datalist,:growl" oncomplete="handleSubmit(args,'PlatosCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PlatosCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
